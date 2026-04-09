@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - EMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- 🔹 NAVBAR -->
+<div class="navbar">
+    <div><b>EMS Dashboard</b></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/add">Add Employee</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+
+<!-- 🔹 HEADING -->
+<h2>Dashboard Overview</h2>
+
+<!-- 🔹 CARDS -->
+<div class="cards">
+    <div class="card-box">
+        <h3>Total Employees</h3>
+        <p>{{ total }}</p>
+    </div>
+
+    <div class="card-box">
+        <h3>Average Salary</h3>
+        <p>₹ {{ avg_salary }}</p>
+    </div>
+
+    <div class="card-box">
+        <h3>Departments</h3>
+        <p>{{ dept_count }}</p>
+    </div>
+</div>
+
+<!-- 🔹 CHART SECTION -->
+<div class="card" style="width:80%; margin:auto;">
+    <h3>Department Distribution</h3>
+    <canvas id="deptChart"></canvas>
+</div>
+
+<!-- 🔹 SEARCH BAR -->
+<input type="text" id="search" placeholder="Search Employee...">
+
+<!-- 🔹 TABLE -->
+<table id="empTable">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Joining Date</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp[0] }}</td>
+        <td>{{ emp[1] }}</td>
+        <td>{{ emp[2] }}</td>
+        <td>{{ emp[3] }}</td>
+        <td>₹ {{ emp[4] }}</td>
+        <td>{{ emp[5] }}</td>
+        <td>
+            <a href="/view/{{ emp[0] }}">View</a> |
+            <a href="/update/{{ emp[0] }}">Edit</a> |
+            <a href="/delete/{{ emp[0] }}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- 🔹 JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('deptChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: {{ dept_labels | tojson }},
+        datasets: [{
+            label: 'Employees per Department',
+            data: {{ dept_values | tojson }},
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

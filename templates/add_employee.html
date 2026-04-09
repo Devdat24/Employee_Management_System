@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="navbar">
+    <a href="/">Home</a>
+</div>
+
+<h2 style="text-align:center;">Add Employee</h2>
+
+<form method="POST">
+
+<input name="name" placeholder="Name" required>
+<input name="email" placeholder="Email" required>
+<input name="department" placeholder="Department" required>
+<input name="salary" placeholder="Salary" required>
+<input type="date" name="joining_date" required>
+
+<button type="submit">Add Employee</button>
+
+</form>

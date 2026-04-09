@@ -1,0 +1,258 @@
+/* RESET */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #1e293b;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar b {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* TABLE */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #1e293b;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+tr:hover {
+    background: #e2e8f0;
+}
+
+/* BUTTON */
+button {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* LINKS (Action buttons) */
+a {
+    text-decoration: none;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+form {
+    width: 40%;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ABOUT SECTION */
+.about-container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.8;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    overflow: hidden;   /* ✅ THIS FIXES OVERFLOW */
+}
+
+.about-container p {
+    margin-bottom: 15px;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* HEADINGS */
+h1, h2 {
+    text-align: center;
+}
+
+/* SEARCH BAR */
+#search {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #search {
+        width: 80%;
+    }
+}
+
+/* DASHBOARD CARDS */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.card-box {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 10px;
+}
+
+.card-box h3 {
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.card-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #1e293b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #334155;
+}
+
+/* CONTENT SHIFT */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}

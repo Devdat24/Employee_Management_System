@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us - EMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+    <div><b>EMS Dashboard</b></div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/add">Add Employee</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+
+    <h1>About Our Employee Management System</h1>
+
+    <div class="about-container">
+
+       <img src="{{ url_for('static', filename='images/office.png') }}">
+
+        <p>
+            Our Employee Management System (EMS) is a comprehensive, scalable, and data-driven platform designed to streamline
+            organizational workforce management. Built with a robust backend architecture and an intuitive user interface,
+            this system empowers HR professionals to efficiently manage employee records, monitor performance metrics, and
+            maintain structured data integrity. By leveraging modern database management practices and dynamic web technologies,
+            the system ensures seamless operations, accuracy, and real-time accessibility of employee information across departments.
+        </p>
+
+        <p>
+            The platform is engineered to simulate real-world enterprise environments, incorporating essential functionalities
+            such as employee onboarding, role-based data handling, salary tracking, and analytical reporting. With a focus on
+            usability and performance, the system minimizes manual intervention and enhances productivity by automating repetitive
+            administrative tasks. Its modular design allows easy scalability, making it adaptable for organizations of varying sizes,
+            from startups to large-scale enterprises.
+        </p>
+
+       <img src="{{ url_for('static', filename='images/team.png') }}">
+
+        <p>
+            Our vision is to deliver a reliable and efficient HR management solution that aligns with industry standards while
+            maintaining simplicity and accessibility. The system not only demonstrates strong backend integration and database
+            normalization concepts but also reflects a professional, user-centric design approach. By combining technical excellence
+            with practical usability, this Employee Management System stands as a powerful tool for modern organizations aiming to
+            optimize their human resource operations and make informed, data-backed decisions.
+        </p>
+
+    </div>
+
+</body>
+</html>
